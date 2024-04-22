@@ -162,12 +162,24 @@
     border: none;
     border-radius: 10px;
     margin: 13px 0;
+    &.active {
+        border: 1px solid #CC2710;
+    }
 
     &:focus-visible {
         outline: none;
         border: 1px solid rgba(185, 185, 185, 0.2);
         box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.1)
     }
+}
+
+.errorMessage {
+    width: 100%;
+    font-size: 13px;
+    color: #666666;
+    overflow:hidden; 
+    white-space:nowrap; 
+    text-overflow: ellipsis;
 }
 
 .submit {
