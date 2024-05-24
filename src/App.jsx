@@ -1,17 +1,30 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
-import { SignIn, SignUp } from './Components'
+import { SignIn, SignUp, Home } from './Pages'
+
+import { Header, Footer } from './Components'
 
 const App = () => {
     return (
         <Router>
             <Routes>
-                <Route exact path="/signup" element={<SignUp />} />
-                <Route exact path="/signin" element={<SignIn />} />
+                <Route path="/" element={<WithComp><Home /></WithComp>} />
+                <Route path="/signup" element={<SignUp />} />
+                <Route path="/signin" element={<SignIn />} />
             </Routes>
         </Router>
     )
+}
+
+const WithComp = ({ children }) => {
+    return (
+        <>
+            <Header />
+            {children}
+            <Footer />
+        </>
+    );
 }
 
 export default App
